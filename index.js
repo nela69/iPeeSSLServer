@@ -8,7 +8,7 @@ const pkg = require( './package.json' );
 const bodyParser = require('body-parser')
 
 const start = Date.now(),
-    protocol = process.env.PROTOCOL || 'https',
+    protocol = process.env.PROTOCOL || 'http',
     port = process.env.PORT || '3000',
     host = process.env.HOST || 'localhost';
 
