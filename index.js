@@ -40,6 +40,21 @@ console.log(
 	port
 );
 
+// to extract the data that was sent as JSON in the request body.
+const bodyParser = require('body-parser')
+
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+)
+
+app.use(bodyParser.json())
+
+app.post('/', (req, res) => {
+  console.log(req.body.name)
+})
+
 // Start a development HTTPS server.
 if ( protocol === 'https' ) {
 	const { execSync } = require( 'child_process' );
