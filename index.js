@@ -4,6 +4,9 @@ const express = require('express'),
 
 const pkg = require( './package.json' );
 
+// to extract the data that was sent as JSON in the request body.
+const bodyParser = require('body-parser')
+
 const start = Date.now(),
     protocol = process.env.PROTOCOL || 'https',
     port = process.env.PORT || '3000',
@@ -40,8 +43,7 @@ console.log(
 	port
 );
 
-// to extract the data that was sent as JSON in the request body.
-const bodyParser = require('body-parser')
+console.log(protocol, port, host);
 
 app.use(
   bodyParser.urlencoded({
